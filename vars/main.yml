@@ -1,87 +1,52 @@
 ---
-
-downloads: ~/.ansible-downloads/
-
-dotfiles_repo: https://github.com/signalpillar/dotfiles.git
-dotfiles_repo_local_destination: ~/proj/dotfiles
+downloads: ~/Downloads/
+dotfiles_repo: https://github.com/Xobb/dotfiles.git
+dotfiles_repo_local_destination: ~/src/personal/dotfiles
 dotfiles_files:
-   - {src: .gitconfig, dst: ~/.gitconfig}
-   - {src: .gitignore, dst: ~/.gitignore}
-   - {src: .spacemacs, dst: ~/.spacemacs}
-   - {src: .tmux.conf, dst: ~/.tmux.conf}
-   - {src: .zshrc, dst: ~/.zshrc}
-   - {src: bin/ec, dst: ~/bin/ec}
-   - {src: bin/open_md, dst: ~/bin/open_md}
-   - {src: functions.sh, dst: ~/functions.sh}
-   - {src: global_requirements.txt, dst: ~/global_requirements.txt}
-   # iTerm2 doesn't modify settings - it overrides them (symlink will be overriden by a  new file)
-   - {src: iterm2/com.googlecode.iterm2.plist, dst: ~/Library/Preferences/com.googlecode.iterm2.plist}
+   - { src: .gitconfig, dst: ~/.gitconfig }
+   - { src: .gitignore, dst: ~/.gitignore }
+   - { src: .bashrc, dst: ~/.bashrc }
+   - { src: .bash_profile, dst: ~/.bash_profile }
+   - { src: .bash_aliases, dst: ~/.bash_aliases }
 
 # variables for the role: geerlingguy.homebrew
 homebrew_upgrade_all_packages: yes
 homebrew_cask_appdir: /Applications
 homebrew_installed_packages:
-   - ansible
-   - boot2docker
    - caskroom/cask/brew-cask
-   - cmake
-   - cowsay
-   - ctags
-   - direnv
-   - docker
-   - emacs
-   # PathPicker accepts a wide range of input — output from git commands, grep results,
-   # searches — pretty much anything.
-   - fpp
    - git
-   - go
-   # HTTPie is a command line HTTP client, a user-friendly cURL replacement.
    - httpie
-   - icdiff
-   # jq is a lightweight and flexible command-line JSON processor
-   - jq
-   - mc
-   - mosh
-   - ngrok
-   - npm
+   - mobile-shell
+   - pyenv
+   - pyenv-virtualenvwrapper
+   - nvm
+   - node
+   - lame
    - openssl
    - readline
-   - reattach-to-user-namespace
-   - the_silver_searcher
-   # Tig is an ncurses-based text-mode interface for git.
-   - tig
-   - tmux
+   - thefuck
+   - tree
+   - watchman
    - wget
-   - youtube-dl
-   - z
 
 homebrew_taps:
    - caskroom/cask
 
 homebrew_cask_apps:
-   - appcleaner
-   - bartender
-   - clipmenu
-   - daisydisk
+   - caffeine
+   - crossover
+   - google-drive
+   - kdiff3
    - dash
-   - dropbox
    - evernote
-   - fing
-   - firefox
-   - flux
+   - unrarx
+   - spectacle
+   - vox
    - google-chrome
    - iterm2
    - java
-   - karabiner 
-   - kindle
-   # capture part of the screen and save as GIF
-   - licecap
-   - menumeters
    - skype
    - slack
-   - sourcetree
-   - sublime-text
    - vagrant
-   - viber
    - virtualbox
    - vlc
