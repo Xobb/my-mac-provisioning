@@ -33,14 +33,13 @@ homebrew_taps:
    - caskroom/cask
 
 homebrew_cask_apps:
+   - atom
    - caffeine
    - crossover
    - google-drive
    - kdiff3
    - dash
-   - evernote
    - unrarx
-   - spectacle
    - vox
    - google-chrome
    - iterm2
