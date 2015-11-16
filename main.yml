@@ -1,14 +1,12 @@
 ---
 - hosts: localhost
   connection: local
-
   vars_files:
      - vars/main.yml
   roles:
      - { role: geerlingguy.homebrew }
 
   tasks:
-
      # Install tooling
      - name: Ensure Ansible downloads directory exists
        file: path={{ item }} state=directory
@@ -24,14 +22,3 @@
      - name: Link dotfiles
        file: path={{ item.dst }} src={{ dotfiles_repo_local_destination }}/{{ item.src }} state=link
        with_items: "{{ dotfiles_files }}"
-
-      - name: Create directories for vim configuration and bundles
-        file: path=~/.vim/{{ item }}
-        with_items:
-        - autoload
-        - bundle
-
-      - name: Download pathogen
-        get_url: url=https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-                 dest=~/.vim/autoload/pathogen.vim
-        creates: ~/.vim/autoload/pathogen.vim
